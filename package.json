@@ -9,6 +9,11 @@
   , "dependencies": {
       "express": "latest"
     , "jade": ">= 0.26.1"
-    , "socket.io": ">= 0.9.6"
+    , "socket.io": ">= 0.9.6",
+    "body-parser":"*",
+  	"mongoose": "^4.1.0",
+    "morgan": "^1.1.1",
+    "q": "^1.4.1",
+    "request": "^2.36.0"
   }
 }
