@@ -1,22 +1,23 @@
 {
-    "name": "angularjs-socketio-nodejs-chat"
-  , "version": "0.0.1"
-  , "private": true
-  , "engines": {
+  "name": "angularjs-socketio-nodejs-chat",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
     "node": "0.8.x",
     "npm": "1.1.x"
-  }
-  , "dependencies": {
-      "express": "latest"
-    , "jade": ">= 0.26.1"
-    , "socket.io": ">= 0.9.6",
+  },
+  "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "body-parser": "*",
+    "express": "latest",
+    "express-session": "^1.15.1",
+    "jade": ">= 0.26.1",
     "jwt-simple": "^0.5.0",
-    "body-parser":"*",
-  	"mongoose": "^4.1.0",
     "mongodb": "^2.2.22",
+    "mongoose": "^4.1.0",
     "morgan": "^1.1.1",
     "q": "^1.4.1",
-    "request": "^2.36.0"
+    "request": "^2.36.0",
+    "socket.io": ">= 0.9.6"
   }
 }
