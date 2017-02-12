@@ -1,6 +1,6 @@
 angular.module('book.main', [])
 
-.controller('MainController', function ($scope, ) {
+.controller('MainController', function ($scope) {
   $scope.data = {};
 
 });

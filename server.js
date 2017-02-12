@@ -7,6 +7,7 @@ var session = require('express-session');
 var handlers = require('./handlers.js')
 var Book = require('./models/book');
 
+
 app.use(express.static(__dirname + '/client'));
 app.use(bodyParser.json());
 
