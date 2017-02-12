@@ -4,11 +4,11 @@ angular.module('book.auth',
 	,[])
 .config(function($routeProvider, $httpProvider){
 	.when('/signup', {
-      templateUrl: 'app/account/signup.html',
+      templateUrl: 'app/account/signin.html',
       controller: 'AuthController'
     })
     .when('/login', {
-      templateUrl: 'app/account/login.html',
+      templateUrl: 'app/account/signup.html',
       controller: 'AuthController'
     })     
 	.when('/', {

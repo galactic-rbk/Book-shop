@@ -19,38 +19,14 @@ var db = mongoose.connection;
 // 		console.log('mongoDB is open');
 // 	});
 
-// app.get('/', function(req, res)  {
-// 	res.send('Please use /api/books');
-// });
 
+app.get('/api/books',handlers.handelBook.showbook);
+app.post('/api/books',handlers.handelBook.addbook);
 
-app.get('/api/books', function(req, res)  {
-	Book.getBooks(function(err, books)  {
-		if(err){
-			throw err;
-		}
-		res.json(books);
-	});
-});
-
-app.post('/api/books', function(req, res)  {
-	var book = req.body;
-	Book.addBook(book,function (err, book) {
-		if(err){
-			throw err;
-		}
-		res.json(book);
-	});
-});
-
-app.post('/api/users/signup', );
-app.post('/api/users/signin', );
-
-
-app.get('/api/users', );
-app.get('/api/users/:user', );
-
-
+app.post('/api/users/signup', handlers.handleUsers.signup);
+app.post('/api/users/signin', handlers.handleUsers.signin);
+app.get('/api/users', handlers.handleUsers.getUsers);
+//app.get('/api/users/:user', );
 
 
 app.listen(process.env.PORT || 3000);
