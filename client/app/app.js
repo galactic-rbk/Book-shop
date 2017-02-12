@@ -1,14 +1,17 @@
-angular.module('book.auth',
+angular.module('books',
+  ['book.auth',
   'book.main',
-  'book.services'
-	,[])
+  'book.services',
+  'ngRoute'
+	])
 .config(function($routeProvider, $httpProvider){
+  $routeProvider
 	.when('/signup', {
-      templateUrl: 'app/account/signin.html',
+      templateUrl: 'app/account/signup.html',
       controller: 'AuthController'
     })
-    .when('/login', {
-      templateUrl: 'app/account/signup.html',
+    .when('/signin', {
+      templateUrl: 'app/account/signin.html',
       controller: 'AuthController'
     })     
 	.when('/', {
