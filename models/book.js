@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const bookSchema = mongoose.Schema({
 	title:{
 		type: String,
-		required: true
+		required: true,
+		unique: true
 	},
 	genre:{
 		type: String,
@@ -35,7 +36,7 @@ const bookSchema = mongoose.Schema({
 	}
 });
 
-const Book = module.exports = mongoose.model('Book', bookSchema);
+const Book = module.exports = mongoose.model('books', bookSchema);
 
 // Get Books
 module.exports.getBooks = (callback, limit) => {
