@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 
 // Connect to Mongoose
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/bookshop');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/bookstore');
 var db = mongoose.connection;
 
 // db.once('open',function () {
