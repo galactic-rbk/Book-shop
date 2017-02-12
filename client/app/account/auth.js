@@ -1,6 +1,6 @@
 angular.module('book.auth', [])
 
-.controller('AuthController', function ($scope, $window, $location) {
+.controller('AuthController', function ($scope , $window , $location , Auth) {
   $scope.user = {};
 
 
