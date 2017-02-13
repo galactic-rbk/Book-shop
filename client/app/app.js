@@ -14,6 +14,10 @@ angular.module('books',
       templateUrl: 'app/account/signin.html',
       controller: 'AuthController'
     })     
+  .when('/signout', {
+      templateUrl: 'app/account/signout.html',
+      controller: 'AuthController'
+    })
 	.when('/', {
       templateUrl: 'app/main/main.html',
       controller: 'MainController'

@@ -51,9 +51,15 @@ angular.module('book.services', [])
     });
   };
 
+  var signout = function () {
+    $window.localStorage.removeItem('com.book');
+    $window.localStorage.removeItem('user.book');
+    $location.path('/');
+  };
 
   return {
     signin: signin,
-    signup: signup
+    signup: signup,
+    signout:signout
   };
 });
