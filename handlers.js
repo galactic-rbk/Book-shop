@@ -29,7 +29,11 @@ module.exports.handleUsers = {
   signup: function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
-    var name = req.body.name;
+    var userType = req.body.userType;
+    var phone = req.body.phone;
+    var address = req.body.address;
+    var emailAddress = req.body.emailAddress;
+
 
     // check to see if user already exists
     User.findOne({username: username})
@@ -41,7 +45,10 @@ module.exports.handleUsers = {
           return User.create({
             username: username,
             password: password,
-            name: name
+            userType: userType,
+            phone: phone,
+            address: address,
+            emailAddress: emailAddress
           }, function (err, newUser) {
               // create token to send back for auth
               if(err){

@@ -16,9 +16,9 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/bookstore');
 var db = mongoose.connection;
 
-// db.once('open',function () {
-// 		console.log('mongoDB is open');
-// 	});
+db.once('open',function () {
+		console.log('mongoDB is open');
+	});
 
 
 app.get('/api/books',handlers.handelBook.showbook);
