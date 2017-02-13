@@ -1,6 +1,6 @@
 <div class="login-wrap">
-<div ng-model="msg">{{ msg }}</div>
 	<div class="login-html">
+<div ng-model="msg" style="color: red">{{ msg }}</div>
 		<input id="tab-2" type="radio" name="tab" class="sign-up" checked><label for="tab-2" class="tab">Sign Up</label>
 		<div class="login-form">		
 			<form ng-submit='signup()'>
@@ -23,7 +23,7 @@
 					</div>
 					<div class="group">
 						<label for="pass" class="label">Email Address</label>
-						<input id="pass" type="text" class="input" ng-model='usr.emailAddress'>
+						<input id="pass" type="Email" class="input" ng-model='usr.emailAddress'>
 					</div>
 					<div class="group">
 						<input type="submit" class="button" value="Sign Up">

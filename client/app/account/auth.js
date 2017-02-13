@@ -12,7 +12,7 @@ angular.module('book.auth', [])
         console.log(token)
         $window.localStorage.setItem('com.book', token);
         $window.localStorage.setItem('user.book', $scope.user.username);
-        $location.path('/profile');
+        $location.path('/');
       })
       .catch(function (error) {
         console.log(error);
@@ -37,7 +37,7 @@ angular.module('book.auth', [])
       .then(function (token) {
         $window.localStorage.setItem('com.book', token);
         $window.localStorage.setItem('user.book', $scope.user.username);
-        $location.path('/profile');
+        $location.path('/');
       })
       .catch(function (error) {
         console.error(error);
