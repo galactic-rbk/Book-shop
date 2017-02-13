@@ -29,5 +29,27 @@ angular.module('book.auth', [])
     }
 
 
-      $scope.signup = function () {}
-})
+    $scope.signup = function () {
+      var passFlag = $scope.user.password;
+      var userFlag = $scope.user.username;
+      if(userFlag && passFlag){
+        Auth.signup($scope.user)
+        .then(function (token) {
+          $window.localStorage.setItem('com.book', token);
+          $window.localStorage.setItem('user.book', $scope.user.username);
+          $location.path('/profile');
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+      } else {
+        if(!userFlag && !passFlag){
+         $scope.msg = "Wrong input for user or Password"
+        } else if(!userFlag){
+          $scope.msg = "please inter all fild"
+        } else if (!passFlag){
+          $scope.msg = "please inter all fild"
+        }
+      }
+    }
+  })
