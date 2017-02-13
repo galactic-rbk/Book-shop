@@ -6,7 +6,7 @@
     "node": "0.8.x",
     "npm": "1.1.x"
   },
-  , "dependencies": {
+   "dependencies": {
       "express": "latest"
     , "socket.io": ">= 0.9.6",
     "bcrypt-nodejs": "0.0.3",
