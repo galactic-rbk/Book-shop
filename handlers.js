@@ -11,7 +11,7 @@ module.exports.handleUsers = {
     User.findOne({username: username})
       .then(function (user) {
         if (!user) {
-          res.json("user not found")
+          res.status(404).json("user not found")
         } else {
           user.comparePasswords(password)
             .then(function (isMatch) {

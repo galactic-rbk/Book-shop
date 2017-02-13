@@ -16,7 +16,7 @@ var UserSchema = new mongoose.Schema({
     required: true
   },
   userType:String,
-  phone:Number,
+  phone:String,
   address:String,
   emailAddress:String,
   salt: String
