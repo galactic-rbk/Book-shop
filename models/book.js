@@ -36,7 +36,7 @@ const bookSchema = mongoose.Schema({
 	}
 });
 
-const Book = module.exports = mongoose.model('books', bookSchema);
+const Book = module.exports = mongoose.model('Book', bookSchema);
 
 // Get Books
 module.exports.getBooks = (callback, limit) => {
