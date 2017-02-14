@@ -6,8 +6,8 @@ angular.module('book.services', [])
 			method: 'GET',
 			url: '/api/books'
 		})
-		.then(function (resp) {
-			return resp.data;
+		.then(function (res) {
+			return res.data;
 		});
 	};
 
@@ -15,9 +15,9 @@ angular.module('book.services', [])
 		return $http({
 			method: 'POST',
 			url: '/api/books',
-			data: JSON.stringify({book : book})
-		}).then(function (resp) {
-			return resp;
+			data: book //JSON.stringify({book : book})
+		}).then(function (res) {
+			return res;
 		});
 	};
 

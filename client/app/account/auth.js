@@ -4,6 +4,7 @@ angular.module('book.auth', [])
   $scope.user = {};
 
   $scope.signin = function () {
+     if($window.localStorage.getItem("com.book") === null) {
     var passFlag = $scope.user.password;
     var userFlag = $scope.user.username;
     if(userFlag && passFlag){
@@ -26,6 +27,7 @@ angular.module('book.auth', [])
         $scope.msg = "please inter your password"
       }
     }
+  }
   }
 
 
