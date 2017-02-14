@@ -22,5 +22,13 @@ angular.module('books',
       templateUrl: 'app/main/main.html',
       controller: 'MainController'
     })
+  .when('/books/add',{
+    templateUrl: 'app/account/add_book.html',
+    controller:'BooksController'
+  })
+  .when('/books',{
+    templateUrl:'app/account/showbooks.html',
+    controller:'BooksController'
+  })
     .otherwise({redirectTo:'/'});
 })
