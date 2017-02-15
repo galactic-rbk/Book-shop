@@ -16,7 +16,7 @@
 			</div>
 			<div class="collapse navbar-collapse navbar-menubuilder">
 				<ul class="nav navbar-nav navbar-left">
-					<li checked><a href="#">Home</a>
+					<li checked><a href="#/main">Home</a>
 					</li>
 					<li><a href="#/contactus">Contact Us</a>
 					</li>
@@ -30,6 +30,11 @@
 					<li><a href="#/add">Add book</a></li>
 					</li>
 				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li ><a href="" id="UserName"></a></li>
+				</ul>
+
+
 			</div>
 		</div>
 	</div>
@@ -53,3 +58,8 @@
 	
 </body>
 </html>
+<script type="text/javascript">
+	if(localStorage.getItem('user.book')){
+		$('#UserName').html(localStorage.getItem('user.book'));		
+	}
+</script>
