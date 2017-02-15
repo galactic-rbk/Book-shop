@@ -8,12 +8,14 @@
 
         <div class="col-md-6">
          <div class="col-md-6">
-          <h4>{{books.title}}</h4>
-          <p>{{books.description}}</p>
+        <img class="thumbnail" src="{{books.image_url}}" style="width: 150px;height: 150px">
           <!-- <a class="btn btn-primary" href="#/books/details/{{books._id}}">View Details</a> -->
         </div>
         <div class="col-md-6">
-        <img class="thumbnail" src="{{books.image_url}}" style="width: 100px;height: 100px">
+          <h4>{{books.title}}</h4>
+          <p>{{books.description}}</p>
+          <p>{{books.author}}</p>
+          <p>{{books.publisher}}</p>
         </div>
       </div>
     </div>
