@@ -16,8 +16,9 @@ angular.module('book.auth', [])
         $window.localStorage.setItem('com.book', data.token);
         $window.localStorage.setItem('user.book', $scope.user.username);
         
-        if(data.user.type)
-        $window.localStorage.setItem('user.type', data.user.type);  
+        if(data.user.type){
+          $window.localStorage.setItem('user.type', data.user.type);  
+        }
 
          if(data.user.type === 'admin'){
              $location.path('/books/add');
