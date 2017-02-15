@@ -2,9 +2,11 @@ angular.module('book.auth', [])
 
 .controller('AuthController', function ($scope , $window , $location , Auth) {
   $scope.user = {};
+     if($window.localStorage.getItem("com.book")) {
+        $location.path('/');
+      } 
 
   $scope.signin = function () {
-     if($window.localStorage.getItem("com.book") === null) {
     var passFlag = $scope.user.password;
     var userFlag = $scope.user.username;
     if(userFlag && passFlag){
@@ -13,6 +15,7 @@ angular.module('book.auth', [])
         console.log(token)
         $window.localStorage.setItem('com.book', token);
         $window.localStorage.setItem('user.book', $scope.user.username);
+        // if(data.userType === 'admin'){}
         $location.path('/');
       })
       .catch(function (error) {
@@ -27,7 +30,6 @@ angular.module('book.auth', [])
         $scope.msg = "please inter your password"
       }
     }
-  }
   }
 
 
