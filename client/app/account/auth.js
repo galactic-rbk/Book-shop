@@ -11,12 +11,19 @@ angular.module('book.auth', [])
     var userFlag = $scope.user.username;
     if(userFlag && passFlag){
       Auth.signin($scope.user)
-      .then(function (token) {
-        console.log(token)
-        $window.localStorage.setItem('com.book', token);
+      .then(function (data) {
+        console.log(data)
+        $window.localStorage.setItem('com.book', data.token);
         $window.localStorage.setItem('user.book', $scope.user.username);
-        // if(data.userType === 'admin'){}
-        $location.path('/');
+        
+        if(data.user.type)
+        $window.localStorage.setItem('user.type', data.user.type);  
+
+         if(data.user.type === 'admin'){
+             $location.path('/books/add');
+         }else {
+              $location.path('/');
+         }
       })
       .catch(function (error) {
         console.log(error);
