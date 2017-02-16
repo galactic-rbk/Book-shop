@@ -13,7 +13,7 @@ angular.module('addbook' , [])
   	book.addbook($scope.book)
   	.then(function (Book) {
         console.log(Book)
-        $location.path('/showbooks');
+        $location.path('/books');
       })
       .catch(function (error) {
         console.log(error);
