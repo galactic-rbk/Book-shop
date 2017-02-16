@@ -1,14 +1,11 @@
 
-<div style="padding:0px; margin:0px; background-color:#fff;font-family:'Open Sans',sans-serif,arial,helvetica,verdana">
-    
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
+ <script type="text/javascript">
+        jssor_1_slider_init = function() {
 
             var jssor_1_options = {
               $AutoPlay: true,
-              $SlideWidth: 600,
-              $Cols: 2,
-              $Align: 100,
+              $SlideDuration: 800,
+              $SlideEasing: $Jease$.$OutQuint,
               $ArrowNavigatorOptions: {
                 $Class: $JssorArrowNavigator$
               },
@@ -24,7 +21,7 @@
             function ScaleSlider() {
                 var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
                 if (refSize) {
-                    refSize = Math.min(refSize, 800);
+                    refSize = Math.min(refSize, 1920);
                     jssor_1_slider.$ScaleWidth(refSize);
                 }
                 else {
@@ -32,113 +29,139 @@
                 }
             }
             ScaleSlider();
-            $(window).bind("load", ScaleSlider);
-            $(window).bind("resize", ScaleSlider);
-            $(window).bind("orientationchange", ScaleSlider);
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
             /*responsive code end*/
-        });
+        };
     </script>
     <style>
-        .jssorb01 {
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
             position: absolute;
         }
-        .jssorb01 div, .jssorb01 div:hover, .jssorb01 .av {
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
             position: absolute;
             /* size of bullet elment */
-            width: 12px;
-            height: 12px;
-            filter: alpha(opacity=70);
-            opacity: .7;
+            width: 16px;
+            height: 16px;
+            background: url('app/main/img/b05.png') no-repeat;
             overflow: hidden;
             cursor: pointer;
-            border: #000 1px solid;
         }
-        .jssorb01 div { background-color: gray; }
-        .jssorb01 div:hover, .jssorb01 .av:hover { background-color: #d3d3d3; }
-        .jssorb01 .av { background-color: #fff; }
-        .jssorb01 .dn, .jssorb01 .dn:hover { background-color: #555555; }
-        .jssora13l, .jssora13r {
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+        /* jssor slider arrow navigator skin 22 css */
+        /*
+        .jssora22l                  (normal)
+        .jssora22r                  (normal)
+        .jssora22l:hover            (normal mouseover)
+        .jssora22r:hover            (normal mouseover)
+        .jssora22l.jssora22ldn      (mousedown)
+        .jssora22r.jssora22rdn      (mousedown)
+        .jssora22l.jssora22lds      (disabled)
+        .jssora22r.jssora22rds      (disabled)
+        */
+        .jssora22l, .jssora22r {
             display: block;
             position: absolute;
             /* size of arrow element */
             width: 40px;
-            height: 50px;
+            height: 58px;
             cursor: pointer;
-            background: url('img/a13.png') no-repeat;
+            background: url('app/main/img/a22.png') center center no-repeat;
             overflow: hidden;
         }
-        .jssora13l { background-position: -10px -35px; }
-        .jssora13r { background-position: -70px -35px; }
-        .jssora13l:hover { background-position: -130px -35px; }
-        .jssora13r:hover { background-position: -190px -35px; }
-        .jssora13l.jssora13ldn { background-position: -250px -35px; }
-        .jssora13r.jssora13rdn { background-position: -310px -35px; }
-        .jssora13l.jssora13lds { background-position: -10px -35px; opacity: .3; pointer-events: none; }
-        .jssora13r.jssora13rds { background-position: -70px -35px; opacity: .3; pointer-events: none; }
+        .jssora22l { background-position: -10px -31px; }
+        .jssora22r { background-position: -70px -31px; }
+        .jssora22l:hover { background-position: -130px -31px; }
+        .jssora22r:hover { background-position: -190px -31px; }
+        .jssora22l.jssora22ldn { background-position: -250px -31px; }
+        .jssora22r.jssora22rdn { background-position: -310px -31px; }
+        .jssora22l.jssora22lds { background-position: -10px -31px; opacity: .3; pointer-events: none; }
+        .jssora22r.jssora22rds { background-position: -70px -31px; opacity: .3; pointer-events: none; }
     </style>
+
     <div class="container">
-    	<div class="row">
-    		 <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:800px;height:300px;overflow:hidden;visibility:hidden;">
+
+    <div class="row" style="    text-align: -webkit-center;
+    background: ghostwhite;
+    font-size: -webkit-xxx-large;
+    font-style: italic;
+    font-family: cursive;">Welcome To Book Store<hr size="30"></div>
+        <div class="row">
+            <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url('app/main/img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
-        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:800px;height:300px;overflow:hidden;">
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
+            <a data-u="any" href="#" style="display:none">Book Store</a>
             <div>
-                <img data-u="image" src="app/main/img/002.jpg"/>
+                <img data-u="image" src="app/main/img/start.jpg" />
+                <div style="position:absolute;top:30px;left:30px;width:480px;height:120px;z-index:0;font-size:50px;color: rgb(9, 218, 230);line-height:60px;font-style: oblique;">Book Store </br>Rbk</div>
+                
             </div>
             <div>
-                <img data-u="image" src="app/main/img/003.jpg" />
+                <img data-u="image" src="app/main/img/start2.jpg" />
             </div>
             <div>
-                <img data-u="image" src="app/main/img/004.jpg" />
+                <img data-u="image" src="app/main/img/start3.jpg" />
             </div>
             <div>
-                <img data-u="image" src="app/main/img/005.jpg" />
+                <img data-u="image" src="app/main/img/start4.jpg" />
             </div>
             <div>
-                <img data-u="image" src="app/main/img/006.jpg" />
-            </div>
-            <div>
-                <img data-u="image" src="app/main/img/007.jpg" />
-            </div>
-            <div>
-                <img data-u="image" src="app/main/img/008.jpg" />
-            </div>
-            <a data-u="any" href="http://www.jssor.com" style="display:none">Nearby Image Partial Visible Slider</a>
-            <div>
-                <img data-u="image" src="app/main/img/009.jpg" />
+                <img data-u="image" src="app/main/img/start5.jpg" />
             </div>
         </div>
         <!-- Bullet Navigator -->
-        <div data-u="navigator" class="jssorb01" style="bottom:16px;right:16px;" data-autocenter="1">
-            <div data-u="prototype" style="width:12px;height:12px;"></div>
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
         </div>
         <!-- Arrow Navigator -->
-        <span data-u="arrowleft" class="jssora13l" style="top:0px;left:30px;width:40px;height:50px;" data-autocenter="2"></span>
-        <span data-u="arrowright" class="jssora13r" style="top:0px;right:30px;width:40px;height:50px;" data-autocenter="2"></span>
+        <span data-u="arrowleft" class="jssora22l" style="top:0px;left:8px;width:40px;height:58px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora22r" style="top:0px;right:8px;width:40px;height:58px;" data-autocenter="2"></span>
     </div>
-    <!-- #endregion Jssor Slider End -->
-
-    	</div><!--end slider here -->
-
-    		<hr>
-    	<div class="row">
-    	
-    		<div class="col-md-6"  style="text-align:-webkit-center"><button type="button" class="btn btn-primary btn-lg" >Upload</button></div>
-    		<div class="col-md-6" style="text-align: -webkit-center"><button type="button" class="btn btn-primary btn-lg" >Library</button></div>
-    	
-    	</div>
-
-    </div>
-   
+        <script type="text/javascript">jssor_1_slider_init();</script>
+        </div> <!-- end row -->
+    </div>  <!-- end container -->
+    <!-- this container to write information about our project -->
+    <div class="container-fluid bg-2 text-center">
+  <h3>What Am I?</h3>
+  <p>Lorem ipsum..</p>
+ 
 </div>
-<!-- <button type="button" class="btn btn-primary btn-lg" style="
-    width: 200px;
-">
-  <i class="glyphicon glyphicon-book" style="
-    display: block;
-    font-size: 2em;
-    margin-bottom: 10px;
-"></i>Library</button> -->
+
+<!-- end about our project -->
+<!-- put 3 of our products -->
+<div class="container bg-3 text-center"> 
+  <h3>Some Products</h3>
+  <div class="row">
+    <div class="col-md-4" >
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+      <img src="app/main/img/start.jpg" class="img-responsive" style="width:70%" >
+    </div>
+    <div class="col-md-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="app/main/img/start2.jpg" class="img-responsive" style="width:70%" >
+    </div>
+    <div class="col-md-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="app/main/img/start4.jpg" class="img-responsive" style="width:70%" >
+    </div>
+  </div>
+</div>
+</br>
