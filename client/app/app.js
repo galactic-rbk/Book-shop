@@ -31,5 +31,9 @@ angular.module('books',
     templateUrl:'app/account/showbooks.html',
     controller:'BookController'
   })
+  .when('/aboutus',{
+    templateUrl:'app/account/aboutus.html',
+    controller:'BookController'
+  })
     .otherwise({redirectTo:'/'});
 })
