@@ -28,6 +28,7 @@ angular.module('book.auth', [])
       })
       .catch(function (error) {
         console.log(error);
+        $scope.msg = "user not Found...Sign up First";
       });
     } else {
       if(!userFlag && !passFlag){
