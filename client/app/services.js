@@ -1,5 +1,6 @@
 angular.module('book.services', [])
 
+// get all book
 .factory('book', function ($http) {
 	var showbook = function () {
 		return $http({
@@ -11,11 +12,12 @@ angular.module('book.services', [])
 		});
 	};
 
+  // "post" add book
 	var addbook = function (book) {
 		return $http({
 			method: 'POST',
 			url: '/api/books',
-			data: book //JSON.stringify({book : book})
+			data: book 
 		}).then(function (res) {
 			return res;
 		});

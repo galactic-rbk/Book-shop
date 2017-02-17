@@ -8,7 +8,7 @@ angular.module('addbook' , [])
         $location.path('/');
       } 
   }
-
+  // function add book just for admin 
   $scope.addbook = function () {
   	book.addbook($scope.book)
   	.then(function (Book) {
@@ -20,7 +20,7 @@ angular.module('addbook' , [])
       });
   }
 
-
+  // function show book for user and admin
   $scope.showBook = function () {
   	book.showbook($scope.book).then(function(data) {
 		$scope.book = data;

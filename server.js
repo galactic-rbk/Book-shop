@@ -7,7 +7,7 @@ var session = require('express-session');
 var handlers = require('./handlers.js')
 var Book = require('./models/book');
 
-
+//middleware
 app.use(express.static(__dirname + '/client'));
 app.use(bodyParser.json());
 
@@ -16,9 +16,6 @@ app.use(bodyParser.json());
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/bookstore');
 var db = mongoose.connection;
 
-// db.once('open',function () {
-// 		console.log('mongoDB is open');
-// 	});
 
 
 app.get('/api/books',handlers.handelBook.showbook);
