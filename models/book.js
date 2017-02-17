@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// Book Schema
+// Book Schema to add it to mongo data bease
 const bookSchema = mongoose.Schema({
 	title:{
 		type: String,
@@ -38,14 +38,14 @@ const bookSchema = mongoose.Schema({
 
 const Book = module.exports = mongoose.model('Book', bookSchema);
 
-// Get Books
+// Get Books from mongo data base
 module.exports.getBooks = (callback) => {
-	Book.find(callback);//.limit(limit);
+	Book.find(callback);
 }
 
 
 
-// Add Book
+// Add Book to mongo data base
 module.exports.addBook = (book, callback) => {
 	Book.create(book, callback);
 }

@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 var SALT_WORK_FACTOR = 10;
 
-
+// use schema to add it to mongo data base
 var UserSchema = new mongoose.Schema({
   username: {
     type: String,

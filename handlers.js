@@ -3,6 +3,7 @@ var User = require('./models/userModel.js');
 var jwt = require('jwt-simple');
 
 
+// check for user in data base
 module.exports.handleUsers = {
   signin : function(req, res) {
     var username = req.body.username;
@@ -26,6 +27,7 @@ module.exports.handleUsers = {
       });
   },
 
+  // add user to data base
   signup: function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
@@ -62,6 +64,7 @@ module.exports.handleUsers = {
       });
   },
 
+  // get user in data base
   getUsers: function(req, res) {
     User.find({}, function(err, users){
       if(err){
@@ -76,7 +79,7 @@ module.exports.handleUsers = {
 
 
 module.exports.handelBook = {
-
+  // get book from data base
 	showbook: function(req, res)  {
 		Book.getBooks(function(err, books)  {
 			if(err){
@@ -86,6 +89,7 @@ module.exports.handelBook = {
 		});
 	},
 
+  // add book to data base
 	addbook : function(req, res)  {
 		var book = req.body;
 		Book.addBook(book,function (err, book) {

@@ -1,3 +1,4 @@
+// we don't use this file
 var Q = require('q');
 var jwt = require('jwt-simple');
 var User = require('./userModel.js');
