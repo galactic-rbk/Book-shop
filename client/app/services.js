@@ -58,6 +58,7 @@ angular.module('book.services', [])
     $window.localStorage.removeItem('user.book');
     $window.localStorage.removeItem('user.type');
     $location.path('/signin');
+    $window.location.reload();
   };
 
   return {
