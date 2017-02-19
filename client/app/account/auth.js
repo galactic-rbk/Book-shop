@@ -22,8 +22,10 @@ angular.module('book.auth', [])
 
          if(data.user.type === 'admin'){
              $location.path('/books/add');
+             $window.location.reload();
          }else {
               $location.path('/');
+              $window.location.reload();
          }
       })
       .catch(function (error) {
@@ -50,6 +52,7 @@ angular.module('book.auth', [])
         $window.localStorage.setItem('com.book', token);
         $window.localStorage.setItem('user.book', $scope.user.username);
         $location.path('/');
+        $window.location.reload();
       })
       .catch(function (error) {
         console.error(error);
