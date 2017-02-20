@@ -91,6 +91,7 @@ module.exports.handelBook = {
 
   // add book to data base
 	addbook : function(req, res)  {
+   console.log(req.body.price)
 		var book = req.body;
 		Book.addBook(book,function (err, book) {
 			if(err){
@@ -98,6 +99,10 @@ module.exports.handelBook = {
 			}
 			res.json(book);
 		});
-	}
+	},
+  //
+  Buy:function(req.res) {
+    console.log("hhhh")
+  }
 
 }

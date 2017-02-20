@@ -1,15 +1,15 @@
 <!-- html page for show book -->
 <div class="panel panel-default" ng-init="showBook()">
-<div class="panel-heading" style="background-color: #420606"> </div>
+  <div class="panel-heading" style="background-color: #420606"> </div>
   <div class="panel-heading" style="background-color: #09091e"> 
     <h3 class="panel-title" style="color: white; text-align: center;">Latest Books</h3>
   </div>
-    <div class="panel-body">
-      <div class="row">
+  <div class="panel-body">
+    <div class="row">
       <div ng-repeat="books in book">
         <div class="col-md-6">
          <div class="col-md-6">
-        <img class="thumbnail" src="{{books.image_url}}" style="width: 180px;height: 280px">
+          <img class="thumbnail" src="{{books.image_url}}" style="width: 180px;height: 280px">
         </div>
         <div class="col-md-6">
           <h2 style="font-weight: bold;">{{books.title}}</h2>
@@ -19,9 +19,20 @@
           <p><span style="color: #380001">pages : </span>{{books.pages}}</p>
           <p style="color:#380001">simple description :</p>
           <p>{{books.description}}</p>
+          <p><span style="color: #380001">price : </span>{{books.price}}</p>
+          <button ng-click="Buy(books.title,books.price)">Buy</button>
+          <button ng-click="cancel(books.title)">Cancel</button>
         </div>
       </div>
     </div>
   </div>
+      <h3> Your Book </h3>
+  <div ng-repeat="books in buy">
+    <div >
+     <p><span>{{books.title}}</span>  {{books.price}}</p>
+    </div>
+  </div>
+  <div class="popup" ng-click="finish() ">Click me to show the Amount!
+  <span class="popuptext" id="myPopup">{{sum + " JD"}}</span>
 </div>
 </div>
