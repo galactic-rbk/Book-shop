@@ -1,15 +1,15 @@
 <!-- html page for show book -->
 <div class="panel panel-default" ng-init="showBook()">
-<div class="panel-heading" style="background-color: #420606"> </div>
+  <div class="panel-heading" style="background-color: #420606"> </div>
   <div class="panel-heading" style="background-color: #09091e"> 
     <h3 class="panel-title" style="color: white; text-align: center;">Latest Books</h3>
   </div>
-    <div class="panel-body">
-      <div class="row">
+  <div class="panel-body">
+    <div class="row">
       <div ng-repeat="books in book">
         <div class="col-md-6">
          <div class="col-md-6">
-        <img class="thumbnail" src="{{books.image_url}}" style="width: 180px;height: 280px">
+          <img class="thumbnail" src="{{books.image_url}}" style="width: 180px;height: 280px">
         </div>
         <div class="col-md-6">
           <h2 style="font-weight: bold;">{{books.title}}</h2>
@@ -26,8 +26,11 @@
       </div>
     </div>
   </div>
-</div>
-<button ng-click="result()">your books</button>
-<div ng-repeat="books in book">
-<div ng-if= "bookBuy"  ng-show = ".showbook">
+      <h3> Your Book </h3>
+  <div ng-repeat="books in buy">
+    <div >
+     <p><span>{{books.title}}</span>  {{books.price}}</p>
+    </div>
+  </div>
+  <button ng-click="finish()">Submit Order</button>
 </div>
