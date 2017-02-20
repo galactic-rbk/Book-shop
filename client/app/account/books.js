@@ -33,18 +33,18 @@ angular.module('addbook' , [])
       }
     }
     console.log($scope.buy)
-
   }
-  $scope.finish=function(){
-    var sum=0
+  $scope.finish=function() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+    $scope.sum=0
     for (var i = 0; i < $scope.buy.length; i++) {
       var price=$scope.buy[i]["price"]
       price=price.split(" ");
       price=Number(price[0])
-      sum+=price
+      $scope.sum+=price
     }
-    alert("tha amount is  " +sum +"  JD")
-  }
+}
   // function show book for user and admin
   $scope.showBook = function () {
   	book.showbook($scope.book).then(function(data) {
