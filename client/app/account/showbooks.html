@@ -19,9 +19,15 @@
           <p><span style="color: #380001">pages : </span>{{books.pages}}</p>
           <p style="color:#380001">simple description :</p>
           <p>{{books.description}}</p>
+          <p><span style="color: #380001">price : </span>{{books.price}}</p>
+          <button ng-click="Buy(books.title,books.price)">Buy</button>
+          <button ng-click="cancel(books.title)">Cancel</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+<button ng-click="result()">your books</button>
+<div ng-repeat="books in book">
+<div ng-if= "bookBuy"  ng-show = ".showbook">
 </div>
