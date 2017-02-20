@@ -36,7 +36,14 @@ angular.module('addbook' , [])
 
   }
   $scope.finish=function(){
-    console.log($scope.buy)
+    var sum=0
+    for (var i = 0; i < $scope.buy.length; i++) {
+      var price=$scope.buy[i]["price"]
+      price=price.split(" ");
+      price=Number(price[0])
+      sum+=price
+    }
+    alert("tha amount is  " +sum +"  JD")
   }
   // function show book for user and admin
   $scope.showBook = function () {
