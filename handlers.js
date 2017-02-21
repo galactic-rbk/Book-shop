@@ -1,7 +1,7 @@
 var Book = require('./models/book.js');
 var User = require('./models/userModel.js');
 var jwt = require('jwt-simple');
-
+var Order = require('./models/orderModel.js');
 
 // check for user in data base
 module.exports.handleUsers = {
@@ -100,9 +100,27 @@ module.exports.handelBook = {
 			res.json(book);
 		});
 	},
-  //
-  Buy:function(req.res) {
-    console.log("hhhh")
-  }
+}
 
+module.exports.handelOrder={
+  showorder:function(req,res){
+    Order.getOrders(function(err,orders){
+      if (err) {
+        throw err;
+      }
+      res.json(orders)
+    })
+  },
+
+  addorder:function(req,res){
+    console.log("sdfghjkl")
+    console.log(req.body.data)
+    var order = req.body.data
+    Order.addOrder(order,function (err, order) {
+      if(err){
+        throw err;
+      }
+      res.json(order);
+    });
+  }
 }
