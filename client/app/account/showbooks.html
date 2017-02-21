@@ -20,7 +20,7 @@
           <p style="color:#380001">simple description :</p>
           <p>{{books.description}}</p>
           <p><span style="color: #380001">price : </span>{{books.price}}</p>
-          <button ng-click="Buy(books.title,books.price)">Buy</button>
+          <button ng-click="Buy(books.title,books.price,books.image_url)">Buy</button>
           <button ng-click="cancel(books.title)">Cancel</button>
         </div>
       </div>
@@ -33,6 +33,7 @@
     </div>
   </div>
   <div class="popup" ng-click="finish() ">Click me to show the Amount!
-  <span class="popuptext" id="myPopup">{{sum + " JD"}}</span>
+  <span class="popuptext" id="myPopup">{{sum + " JD "}}</span>
+  <button ng-click='add(buy)'> Submit Order</button>
 </div>
 </div>
