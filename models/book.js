@@ -27,6 +27,10 @@ const bookSchema = mongoose.Schema({
 	image_url:{
 		type: String
 	},
+	price:{
+		type: String,
+		required: true
+	},
 	user_id:{
 		type: String
 	},

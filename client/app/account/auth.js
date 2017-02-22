@@ -24,10 +24,12 @@ angular.module('book.auth', [])
              $location.path('/books/add');
          }else {
               $location.path('/');
+              $window.location.reload();
          }
       })
       .catch(function (error) {
         console.log(error);
+        $scope.msg = "user not Found...Sign up First";
       });
     } else {
       if(!userFlag && !passFlag){
@@ -50,6 +52,7 @@ angular.module('book.auth', [])
         $window.localStorage.setItem('com.book', token);
         $window.localStorage.setItem('user.book', $scope.user.username);
         $location.path('/');
+        $window.location.reload();
       })
       .catch(function (error) {
         console.error(error);

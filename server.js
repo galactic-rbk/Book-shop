@@ -22,8 +22,10 @@ var db = mongoose.connection;
 app.get('/api/books',handlers.handelBook.showbook);
 app.post('/api/books',handlers.handelBook.addbook);
 
-app.post('/api/update',handlers.handelBook.updatebook);
 
+app.post('/api/update',handlers.handelBook.updatebook);
+app.get('/api/orders',handlers.handelOrder.showorder);
+app.post('/api/orders',handlers.handelOrder.addorder);
 app.post('/api/users/signup', handlers.handleUsers.signup);
 app.post('/api/users/signin', handlers.handleUsers.signin);
 app.get('/api/users', handlers.handleUsers.getUsers);

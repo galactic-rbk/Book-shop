@@ -1,15 +1,14 @@
 <!-- this html page for add book just from the admin -->
-<div class="panel panel-default">
-  <div class="panel-heading" style="text-align: center;">
-    <h3 class="panel-title" ng-controller="BookController">Add Book</h3>
-  </div>
-  <div class="panel-body">
-    <div class="row" style="background:url(http://torange.biz/photo/43/43241/B43241.jpg)center;">
+  <div class="panel-body" style="background-image: url(app/main/img/add.jpg);
+    background-size: 134%;
+    background-position: center top">
+    <div class="row">
     <div class="col-md-3"></div>
-      <div class="col-md-6" style="background:url() no-repeat center;color: darkblue; font-size: medium;">
+      <div class="col-md-6" style=" font-size: medium; color:#000000">
       <form ng-submit="addbook()">
         <div class="form-group">
-          <label class="label">Title</label>
+        <br>
+          <label class = "label">Title</label>
           <input type="text" class="form-control" ng-model="book.title" placeholder="Title">
         </div>
         <div class="form-group">
@@ -53,17 +52,24 @@
           
           
         </div>
-        <!-- <div class="form-group">
-          <label>Buy URL</label>
-          <input type="text" class="form-control" ng-model="book.buy_url" placeholder="Buy URL">
-        </div> -->
 
-       <div ng-if="book.title" style="text-align: center;"><button type="submit" class="btn btn-primary btn-lg">Add Book</button></div>
+     
+
         
-      </form>
 
-    </div>
+        <div class="form-group">
+          <label>Price</label>
+          <input type="text" class="form-control" ng-model="book.price" placeholder="Price">
+        </div>
+       <div ng-if="book.title" style="text-align: center;"><button type="submit" class="btn btn-primary btn-lg">Add Book</button></div>
+       <div style="text-align: center;"><button type="submit" class="btn btn-primary btn-lg">Add Book</button></div>
+        <br>
+        </form>
+      </div>
+      
+
     <div class="col-md-3"></div>
     </div>
-  </div>
 </div>
+<br>
+
