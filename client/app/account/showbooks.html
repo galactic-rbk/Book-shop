@@ -4,7 +4,7 @@
     <div class="panel-body">
       <div id = "products" class="row">
       <div ng-repeat="books in book">
-        <ul>
+   
         <div class="col-xs-6 col-md-4"></div>
         <div class="col-xs-6 col-md-4"></div>
          <div class="col-xs-6 col-md-4">
@@ -17,8 +17,12 @@
           <p>simple description :</p>
           <p>{{books.description}}</p>
           <p><span style="color: #380001">price : </span>{{books.price}}</p>
+<<<<<<< HEAD
           </ul>
             </div>
+=======
+                   </div>
+>>>>>>> b4aaa0086126e1a12bd62717fbf19abe4b5bb01f
           <button ng-click="Buy(books.title,books.price,books.image_url)">Buy</button>
           <button ng-click="cancel(books.title)">Cancel</button>
 
@@ -37,5 +41,9 @@
   <span class="popuptext" id="myPopup">{{sum + " JD "}}</span>
   <button ng-click='add(buy)'> Submit Order</button>
 </div>
+<<<<<<< HEAD
 </div>
+=======
+
+>>>>>>> b4aaa0086126e1a12bd62717fbf19abe4b5bb01f
 
