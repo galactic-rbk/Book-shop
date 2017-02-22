@@ -33,9 +33,9 @@ angular.module('book.auth', [])
       if(!userFlag && !passFlag){
         $scope.msg = "Wrong input for user or Password  "
       } else if(!userFlag){
-        $scope.msg = "please inter your username"
+        $scope.msg = "please enter your username"
       } else if (!passFlag){
-        $scope.msg = "please inter your password"
+        $scope.msg = "please enter your password"
       }
     }
   }
@@ -58,9 +58,9 @@ angular.module('book.auth', [])
       if(!userFlag && !passFlag){
        $scope.msg = "Wrong input for user or Password"
      } else if(!userFlag){
-      $scope.msg = "please inter all fild"
+      $scope.msg = "please enter all fields"
     } else if (!passFlag){
-      $scope.msg = "please inter all fild"
+      $scope.msg = "please enter all fields"
     }
   }
 }
