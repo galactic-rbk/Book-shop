@@ -45,11 +45,12 @@ angular.module('books',
   .when('/links',{
     templateUrl:'app/account/showlinks.html',
     controller:'BookController'
+    })
 
   .when('/orders',{
     templateUrl:'app/account/showorders.html',
     controller:'OrderController'
 
   })
-    .otherwise({redirectTo:'/'});
+    .otherwise({redirectTo:'/'})
 })

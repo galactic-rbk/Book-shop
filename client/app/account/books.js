@@ -94,7 +94,6 @@ $scope.booktab=function(link){
   window.open(link,"_blank")
 }
 
-});
 
   // function to add book to the cart
   $scope.Buy=function(title,price,image_url){
@@ -131,5 +130,7 @@ $scope.booktab=function(link){
     }
   }
 });
+
+
 
 
