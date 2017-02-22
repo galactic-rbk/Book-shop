@@ -1,27 +1,23 @@
 <!-- html page for show book -->
-<div class="panel panel-default" ng-init="showBook()">
-<div class="panel-heading" style="background-color: #420606"> </div>
-  <div class="panel-heading" style="background-color: #09091e"> 
-    <h3 class="panel-title" style="color: white; text-align: center;">Latest Books</h3>
-  </div>
+<div ng-init="showBook()">
     <div class="panel-body">
-      <div class="row">
+      <div id = "products" class="row">
       <div ng-repeat="books in book">
-        <div class="col-md-6">
-         <div class="col-md-6">
+        <ul>
+        <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-6 col-md-4"></div>
+         <div class="col-xs-6 col-md-4">
         <img class="thumbnail" src="{{books.image_url}}" style="width: 180px;height: 280px">
         </div>
-        <div class="col-md-6">
           <h2 style="font-weight: bold;">{{books.title}}</h2>
-          <p><span style="color: #380001">by : </span> {{books.author}}</p>
-          <p><span style="color: #380001">genre : </span>{{books.genre}}</p>
-          <p><span style="color: #380001"> publisher : </span>{{books.publisher}}</p>
-          <p><span style="color: #380001">pages : </span>{{books.pages}}</p>
-          <p style="color:#380001">simple description :</p>
+          <p><span>by : </span> {{books.author}}</p>
+          <p><span>genre : </span>{{books.genre}}</p>
+          <p><span> publisher : </span>{{books.publisher}}</p>
+          <p><span>pages : </span>{{books.pages}}</p>
+          <p>simple description :</p>
           <p>{{books.description}}</p>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
