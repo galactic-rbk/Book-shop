@@ -30,6 +30,36 @@ angular.module('book.services', [])
 
 })
 
+.factory('Order',function($http){
+  var showorder=function(){
+    return $http({
+      method:'GET',
+      url:'/api/orders'
+    })
+    .then(function(res){
+      return res.data
+    });
+  };
+
+
+ var addorder = function (order) {
+  console.log(order)
+    return $http({
+      method: 'POST',
+      url: '/api/orders',
+      data: order
+    }).then(function (res) {
+      return res;
+    });
+  };
+
+  return {
+    showorder:showorder,
+    addorder:addorder
+  }
+
+})
+
 .factory('Auth', function ($http, $location, $window) {
   var signin = function (user) {
     return $http({

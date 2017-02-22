@@ -1,4 +1,5 @@
 <!-- html page for show book -->
+
 <div ng-init="showBook()">
     <div class="panel-body">
       <div id = "products" class="row">
@@ -8,7 +9,6 @@
         <div class="col-xs-6 col-md-4"></div>
          <div class="col-xs-6 col-md-4">
         <img class="thumbnail" src="{{books.image_url}}" style="width: 180px;height: 280px">
-        </div>
           <h2 style="font-weight: bold;">{{books.title}}</h2>
           <p><span>by : </span> {{books.author}}</p>
           <p><span>genre : </span>{{books.genre}}</p>
@@ -16,8 +16,26 @@
           <p><span>pages : </span>{{books.pages}}</p>
           <p>simple description :</p>
           <p>{{books.description}}</p>
+          <p><span style="color: #380001">price : </span>{{books.price}}</p>
           </ul>
+            </div>
+          <button ng-click="Buy(books.title,books.price,books.image_url)">Buy</button>
+          <button ng-click="cancel(books.title)">Cancel</button>
+
         </div>
       </div>
     </div>
   </div>
+
+      <h3> Your Book </h3>
+  <div ng-repeat="books in buy">
+    <div >
+     <p><span>{{books.title}}</span>  {{books.price}}</p>
+    </div>
+  </div>
+  <div class="popup" ng-click="finish() ">Click me to show the Amount!
+  <span class="popuptext" id="myPopup">{{sum + " JD "}}</span>
+  <button ng-click='add(buy)'> Submit Order</button>
+</div>
+</div>
+
