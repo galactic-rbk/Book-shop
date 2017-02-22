@@ -46,6 +46,7 @@ angular.module('books',
     templateUrl:'app/account/showlinks.html',
     controller:'BookController'
 
+})
   .when('/orders',{
     templateUrl:'app/account/showorders.html',
     controller:'OrderController'

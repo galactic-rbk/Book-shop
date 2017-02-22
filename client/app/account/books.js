@@ -89,35 +89,36 @@ angular.module('addbook' , [])
   // if($location.path() === "/upload"){
   //   alert('hey')
   // }
-
 $scope.booktab=function(link){
   window.open(link,"_blank")
 }
 
-});
 
   // function to add book to the cart
   $scope.Buy=function(title,price,image_url){
-    $scope.buy.push({title:title, price:price,image_url:image_url})
+     if($window.localStorage.getItem("user.book")){
+      var user=$window.localStorage.getItem("user.book")
+    $scope.buy.push({user:user,title:title, price:price,image_url:image_url})
      console.log($scope.buy,price)
      console.log($scope.book)
      
     }
+  }
     $scope.add=function(x){
         console.log(x)
        Order.addorder({data:x}).then(function(resp){
         console.log(resp)
        })
     }
+
     // console.log(price,array)
   $scope.cancel=function(title){
     for (var i = 0; i < $scope.buy.length; i++) {
-      if($scope.buy[i]["title"]=title){
+      if($scope.buy[i]["title"]===title){
         $scope.buy.splice(i,1)
         $scope.cancel(title)
       }
-    }
-    // console.log($scope.buy)
+    }// console.log($scope.buy)
   }
   $scope.finish=function() {
     var popup = document.getElementById("myPopup");
@@ -130,6 +131,7 @@ $scope.booktab=function(link){
       $scope.sum+=price
     }
   }
+
+
+
 });
-
-
