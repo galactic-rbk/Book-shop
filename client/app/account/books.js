@@ -4,11 +4,11 @@ angular.module('addbook' , [])
   $scope.book = {};
   $scope.buy=[];
 
-  // if($location.path() === '/books/add'){
-  // if(!$window.localStorage.getItem("user.type")) {
-  //       $location.path('/');
-  //     } 
-  // }
+  if($location.path() === '/books/add'){
+  if(!$window.localStorage.getItem("user.type")) {
+        $location.path('/');
+      } 
+  }
   // function add book just for admin 
   $scope.addbook = function () {
     book.addbook($scope.book)

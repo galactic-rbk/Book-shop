@@ -22,7 +22,6 @@ angular.module('book.auth', [])
 
          if(data.user.type === 'admin'){
              $location.path('/books/add');
-             $window.location.reload();
          }else {
               $location.path('/');
               $window.location.reload();
@@ -30,6 +29,7 @@ angular.module('book.auth', [])
       })
       .catch(function (error) {
         console.log(error);
+        $scope.msg = "user not Found...Sign up First";
       });
     } else {
       if(!userFlag && !passFlag){
