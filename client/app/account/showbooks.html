@@ -5,10 +5,10 @@
       <div id = "products" class="row">
       <div ng-repeat="books in book">
    
-        <div class="col-xs-6 col-md-4"></div>
-        <div class="col-xs-6 col-md-4"></div>
+     <!--    <div class="col-xs-6 col-md-4"></div>
+        <div class="col-xs-6 col-md-4"></div> -->
          <div class="col-xs-6 col-md-4">
-        <img class="thumbnail" src="{{books.image_url}}" style="width: 180px;height: 280px">
+        <img class="img-thumbnail" src="{{books.image_url}}" style="width: 180px;height: 280px">
           <h2 style="font-weight: bold;">{{books.title}}</h2>
           <p><span>by : </span> {{books.author}}</p>
           <p><span>genre : </span>{{books.genre}}</p>
@@ -16,17 +16,19 @@
           <p><span>pages : </span>{{books.pages}}</p>
           <p>simple description :</p>
           <p>{{books.description}}</p>
-          <p><span style="color: #380001">price : </span>{{books.price}}</p>
+          <p><span>price : </span>{{books.price}}</p>
          
-            </div>
-                   </div>
           <button ng-click="Buy(books.title,books.price,books.image_url)">Buy</button>
           <button ng-click="cancel(books.title)">Cancel</button>
+          <br>
+          <br>
+            </div>
+                   </div>
 
         </div>
       </div>
     </div>
-
+<br>
 
       <h3> Your Book </h3>
   <div ng-repeat="books in buy">
