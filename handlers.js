@@ -89,6 +89,16 @@ module.exports.handelBook = {
 		});
 	},
 
+  updatebook: function(req,res){
+    var book = req.body;
+    console.log(book)
+    Book.updateBooks({_id:req.body._id},req.body,function (err, book){
+      if(err){
+        throw err;
+      }
+      res.json(book);
+    });
+  },
   // add book to data base
 	addbook : function(req, res)  {
    console.log(req.body.price)

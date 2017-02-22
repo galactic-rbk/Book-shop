@@ -1,8 +1,4 @@
 <!-- this html page for add book just from the admin -->
-<!-- <div class="panel panel-default">
-
-  
-  </div> -->
   <div class="panel-body" style="background-image: url(app/main/img/add.jpg);
     background-size: 134%;
     background-position: center top">
@@ -12,11 +8,11 @@
       <form ng-submit="addbook()">
         <div class="form-group">
         <br>
-          <label>Title</label>
+          <label class = "label">Title</label>
           <input type="text" class="form-control" ng-model="book.title" placeholder="Title">
         </div>
         <div class="form-group">
-          <label>Genre</label>
+          <label class="label">Genre</label>
           <select ng-model="book.genre" class="form-control">
             <option value="Suspense">Suspense</option>
             <option value="Drama">Drama</option>
@@ -26,37 +22,54 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Author</label>
+          <label class="label">Author</label>
           <input type="text" class="form-control" ng-model="book.author" placeholder="Author">
         </div>
         <div class="form-group">
-          <label>Publisher</label>
+          <label class="label">Publisher</label>
           <input type="text" class="form-control" ng-model="book.publisher" placeholder="Publisher">
         </div>
         <div class="form-group">
-          <label>Pages</label>
+          <label class="label">Pages</label>
           <input type="text" class="form-control" ng-model="book.pages" placeholder="Pages">
         </div>
         <div class="form-group">
-          <label>Description</label>
+          <label class="label">Description</label>
           <textarea class="form-control" ng-model="book.description" placeholder="Description"></textarea>
         </div>
         <div class="form-group">
-          <label>Image URL</label>
-          <input type="text" class="form-control" ng-model="book.image_url" placeholder="Image URL">
+          <label class="btn btn-default btn-file">Add Image
+          <img ng-if="loading" style="height: 30px; width: 30px;" src="load.gif" >
+          <input accept="image/*" type="file" onchange="angular.element(this).scope().image_url=this.files[0];angular.element(this).scope().previewFile(this)" style="display: none;" ><br>
+          </label>
+          <div>
+          <img ng-if="book.image_url" src={{book.image_url}} style="width: 180px;height: 280px" alt="Image preview..."></div>
+
+          <div class="form-group">
+          <label class="label">OR Paste Image's URL</label>
+          <input type="text" class="form-control" ng-model="imagetext" ng-change="previewFile()" placeholder="URL">
+          </div>
+          
+          
         </div>
+
+     
+
+        
+
         <div class="form-group">
           <label>Price</label>
           <input type="text" class="form-control" ng-model="book.price" placeholder="Price">
         </div>
+       <div ng-if="book.title" style="text-align: center;"><button type="submit" class="btn btn-primary btn-lg">Add Book</button></div>
        <div style="text-align: center;"><button type="submit" class="btn btn-primary btn-lg">Add Book</button></div>
-
         <br>
-      </form>
-    </div>
+        </form>
+      </div>
+      
+
     <div class="col-md-3"></div>
     </div>
-
 </div>
-
 <br>
+

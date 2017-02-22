@@ -23,9 +23,21 @@ angular.module('book.services', [])
 		});
 	};
 
+  var updatebook = function (book) {
+    console.log(book)
+    return $http({
+      method: 'POST',
+      url: '/api/update',
+      data: book 
+    }).then(function (res) {
+      return res;
+    });
+  };
+
 	return {
 		showbook: showbook,
-		addbook: addbook
+		addbook: addbook,
+    updatebook : updatebook
 	};
 
 })

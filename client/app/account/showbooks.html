@@ -7,8 +7,16 @@
    
      <!--    <div class="col-xs-6 col-md-4"></div>
         <div class="col-xs-6 col-md-4"></div> -->
+        <img class="img-thumbnail"   ng-if="!books.link" src="{{books.image_url}}" style="width: 180px;height: 280px">
+        <img style="height: 100px;width: 100px" ng-if="books.type==='link' && !books.click" ng-click='books.click=!books.click' src="https://lh3.googleusercontent.com/yRj8UIvEGQRuZt5CCwc-SSgYFinQP4WsLbquzXwLVEP5ub_6h0-EnKnW2_nBw8LlmSwW=w170">
+
+
+        <div class="col-xs-6 col-md-4" ng-if="books.approved==='true'">
+<object ng-if="books.type==='link' && books.click" style="height: 280px;width: 180px" type="application/pdf" data={{books.link}} ></object>
+        <div><button class="btn btn-primary" ng-if="books.type==='link'" ng-click='booktab(books.link)'>Download</button></div>
+</div>
+        <div class="col-xs-6 col-md-4"></div>
          <div class="col-xs-6 col-md-4">
-        <img class="img-thumbnail" src="{{books.image_url}}" style="width: 180px;height: 280px">
           <h2 style="font-weight: bold;">{{books.title}}</h2>
           <p><span>by : </span> {{books.author}}</p>
           <p><span>genre : </span>{{books.genre}}</p>
