@@ -1,14 +1,17 @@
 <!-- this html page for add book just from the admin -->
-<div class="panel panel-default">
-  <div class="panel-heading" style="text-align: center;">
-    <h3 class="panel-title" ng-controller="BookController">Add Book</h3>
-  </div>
-  <div class="panel-body">
-    <div class="row" style="background:url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQbPqzxq73VRqDkwB49O0oeqi5KLfKI4jQSvaRmrS-EArhb_wuhUw)center;">
+<!-- <div class="panel panel-default">
+
+  
+  </div> -->
+  <div class="panel-body" style="background-image: url(app/main/img/add.jpg);
+    background-size: 134%;
+    background-position: center top">
+    <div class="row">
     <div class="col-md-3"></div>
-      <div class="col-md-6" style="background:url(http://www.startupremarkable.com/wp-content/uploads/2015/02/a-book-a-week-image.jpg) no-repeat center;color: darkblue; font-size: medium;">
+      <div class="col-md-6" style=" font-size: medium; color:#000000">
       <form ng-submit="addbook()">
         <div class="form-group">
+        <br>
           <label>Title</label>
           <input type="text" class="form-control" ng-model="book.title" placeholder="Title">
         </div>
@@ -47,9 +50,10 @@
           <input type="text" class="form-control" ng-model="book.price" placeholder="Price">
         </div>
        <div style="text-align: center;"><button type="submit" class="btn btn-primary btn-lg">Add Book</button></div>
+
       </form>
     </div>
     <div class="col-md-3"></div>
     </div>
-  </div>
 </div>
+<br>
