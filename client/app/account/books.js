@@ -134,4 +134,8 @@ $scope.booktab=function(link){
 
 
 
+<<<<<<< HEAD
 });
+=======
+
+>>>>>>> a8a826b324f217dd2e4b097aae69e76873ae446b

@@ -45,6 +45,7 @@ angular.module('books',
   .when('/links',{
     templateUrl:'app/account/showlinks.html',
     controller:'BookController'
+    })
 
 })
   .when('/orders',{
@@ -52,5 +53,5 @@ angular.module('books',
     controller:'OrderController'
 
   })
-    .otherwise({redirectTo:'/'});
+    .otherwise({redirectTo:'/'})
 })
