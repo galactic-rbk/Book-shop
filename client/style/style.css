@@ -12,18 +12,22 @@ a{color:inherit;text-decoration:none}
 .login-wrap{
 	width:100%;
 	margin:auto;
-	max-width:525px;
-	min-height:670px;
+	max-width:600px;
+	min-height:680px;
 	position:relative;
-	background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
-	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+	/*background:url(https://s-media-cache-ak0.pinimg.com/736x/5f/78/97/5f7897efaff70c9cb91a0af1fd53fa1a.jpg)  no-repeat center;*/
+	/*background-size:cover;*/
+	/*background-color: #880E4F;*/
+	/*box-shadow:0 20px 30px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);*/
+
 }
 .login-html{
 	width:100%;
 	height:100%;
 	position:absolute;
 	padding:90px 70px 50px 70px;
-	background:rgba(40,57,101,.9);
+	/*background: rgba(13, 0, 5, 0.6);*/
+	
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -55,7 +59,8 @@ a{color:inherit;text-decoration:none}
 	padding-bottom:5px;
 	margin:0 15px 10px 0;
 	display:inline-block;
-	border-bottom:2px solid transparent;
+	border:2px;
+	/*border-bottom-color: #FFFFFF;*/
 }
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
@@ -77,26 +82,27 @@ a{color:inherit;text-decoration:none}
 .login-form .group .input,
 .login-form .group .button{
 	width:100%;
-	color:#fff;
+	color:#FFFFFF;
 	display:block;
 }
 .login-form .group .input,
-.login-form .group .button{
+.login-form .group .button{ta
 	border:none;
 	padding:15px 20px;
 	border-radius:25px;
 	background:rgba(255,255,255,.1);
+	border-color: #E91E63;
 }
 .login-form .group input[data-type="password"]{
 	text-security:circle;
 	-webkit-text-security:circle;
 }
 .login-form .group .label{
-	color:#aaa;
-	font-size:12px;
+	color:#000000;
+	font-size:14px;
 }
 .login-form .group .button{
-	background:#1161ee;
+	background-color: #880E4F;
 }
 .login-form .group label .icon{
 	width:15px;
@@ -130,7 +136,7 @@ a{color:inherit;text-decoration:none}
 	        transform:scale(0) rotate(0);
 }
 .login-form .group .check:checked + label{
-	color:#fff;
+	color:#FFFFFF;
 }
 .login-form .group .check:checked + label .icon{
 	background:#1161ee;
@@ -157,6 +163,69 @@ a{color:inherit;text-decoration:none}
 	margin:60px 0 50px 0;
 	background:rgba(255,255,255,.2);
 }
-.foot-lnk{
-	text-align:center;
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+footer {
+    /*background-color: orange;*/
+   /* position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    overflow:hidden;*/
 }

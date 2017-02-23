@@ -1,20 +1,22 @@
 
-<div class="panel panel-default">
+
   <div class="panel-heading" style="text-align: center;">
-    <h3 class="panel-title" ng-controller="BookController">Upload Book</h3>
+    <h3 class="panel-title" ng-controller="BookController"  style=" font-size: medium; color:#000000;font-weight: bolder;">Upload Book</h3>
   </div>
-  <div class="panel-body">
-    <div class="row" style="background:url(http://www.motionbackgroundsforfree.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-2.43.55-PM.png)center;">
+  <div class="panel-body"  style="background-image: url(app/main/img/add.jpg);
+    background-size: 134%;
+    background-position: center top">
+    <div class="row">
     <div class="col-md-3"></div>
-      <div class="col-md-6" style="background:url() no-repeat center;color: darkblue; font-size: medium;">
+      <div class="col-md-6">
       
       <form ng-submit="addbook()">
         <div class="form-group">
-          <label class="label">Title</label>
+          <label class="label"  style=" font-size: medium; color:#000000;">Title</label>
           <input type="text" class="form-control" ng-model="book.title" placeholder="Title">
         </div>
         <div class="form-group">
-          <label class="label">Genre</label>
+          <label class="label"  style=" font-size: medium; color:#000000;">Genre</label>
           <select ng-model="book.genre" class="form-control">
             <option value="Suspense">Suspense</option>
             <option value="Drama">Drama</option>
@@ -24,19 +26,23 @@
           </select>
         </div>
         <div class="form-group">
-          <label class="label">Author</label>
+
+   
+
+          <label class="label"  style=" font-size: medium; color:#000000;">Author</label>
           <input type="text" class="form-control" ng-model="book.author" placeholder="Author">
         </div>
         <div class="form-group">
-          <label class="label">Publisher</label>
+          <label class="label"  style=" font-size: medium; color:#000000;">Publisher</label>
           <input type="text" class="form-control" ng-model="book.publisher" placeholder="Publisher">
         </div>
         <div class="form-group">
-          <label class="label">Pages</label>
+          <label class="label"  style=" font-size: medium; color:#000000;">Pages</label>
           <input type="text" class="form-control" ng-model="book.pages" placeholder="Pages">
         </div>
         <div class="form-group">
-          <label class="label">Description</label>
+          <label class="label"  style=" font-size: medium; color:#000000;">Description</label>
+
           <textarea class="form-control" ng-model="book.description" placeholder="Description"></textarea>
         </div>
         <!-- <div class="form-group">
@@ -48,14 +54,18 @@
           <textarea class="form-control" ng-model="upload.description" placeholder="Description"></textarea>
         </div> -->
         <div class="form-group">
-          <label class="btn btn-default btn-file">Add File
+
+          
+
+          <label class="btn btn-primary btn-md">Add File
           <img ng-if="loading" style="height: 30px; width: 30px;" src="load.gif" >
           <input accept="application/pdf" id="test" type="file" onchange="angular.element(this).scope().file=this.files[0];angular.element(this).scope().prosFile(this)" style="display: none;" ><br>
           </label>
-          
+          <br>
+          <br>
 
           <div class="form-group">
-          <label class="label">OR Paste File's URL</label>
+          <label class="label"  style=" font-size: medium; color:#000000;">OR Paste File's URL</label>
           <input type="text" class="form-control" ng-model="filetext" ng-change="prosFile()" placeholder="URL">
           </div>
           
@@ -74,4 +84,4 @@
     <div class="col-md-3"></div>
     </div>
   </div>
-</div>
+

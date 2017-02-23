@@ -1,19 +1,22 @@
 <!-- this html page for add book just from the admin -->
-<div class="panel panel-default">
-  <div class="panel-heading" style="text-align: center;">
-    <h3 class="panel-title" ng-controller="BookController">Add Book</h3>
+ <div class="panel-heading" style="text-align: center;">
+    <h3 class="panel-title" ng-controller="BookController"  style=" font-size: 30px; color:#000000;font-weight: bolder;">Add Book</h3>
   </div>
-  <div class="panel-body">
-    <div class="row" style="background:url(http://torange.biz/photo/43/43241/B43241.jpg)center;">
+  <div class="panel-body" style="background-image: url(app/main/img/add.jpg);
+    background-size: 134%;
+    background-position: center top">
+    <div class="row">
     <div class="col-md-3"></div>
-      <div class="col-md-6" style="background:url() no-repeat center;color: darkblue; font-size: medium;">
+      <div class="col-md-6" style=" font-size: medium; color:#000000">
       <form ng-submit="addbook()">
         <div class="form-group">
-          <label class="label">Title</label>
+        <br>
+          <label class = "label" style=" font-size: medium; color:#000000;">Title</label>
           <input type="text" class="form-control" ng-model="book.title" placeholder="Title">
         </div>
         <div class="form-group">
-          <label class="label">Genre</label>
+          <label class="label" style=" font-size: medium; color:#000000;">Genre</label>
+
           <select ng-model="book.genre" class="form-control">
             <option value="Suspense">Suspense</option>
             <option value="Drama">Drama</option>
@@ -22,48 +25,53 @@
             <option value="Other" >Other</option>
           </select>
         </div>
-        <div class="form-group">
-          <label class="label">Author</label>
+        <div class="form-group" >
+          <label class="labl" style=" font-size: medium; color:#000000;">Author</label>
           <input type="text" class="form-control" ng-model="book.author" placeholder="Author">
         </div>
-        <div class="form-group">
-          <label class="label">Publisher</label>
+        <div class="form-group" >
+          <label class="labl" style=" font-size: medium; color:#000000;">Publisher</label>
           <input type="text" class="form-control" ng-model="book.publisher" placeholder="Publisher">
         </div>
-        <div class="form-group">
-          <label class="label">Pages</label>
+        <div class="form-group" >
+          <label class="labl" style=" font-size: medium; color:#000000;">Pages</label>
           <input type="text" class="form-control" ng-model="book.pages" placeholder="Pages">
         </div>
-        <div class="form-group">
-          <label class="label">Description</label>
+        <div class="form-group" >
+          <label class="labl" style=" font-size: medium; color:#000000;">Description</label>
           <textarea class="form-control" ng-model="book.description" placeholder="Description"></textarea>
         </div>
-        <div class="form-group">
-          <label class="btn btn-default btn-file">Add Image
+        <div class="form-group" >
+          <label type="submit" class="btn btn-primary btn-md">Add Image
+
           <img ng-if="loading" style="height: 30px; width: 30px;" src="load.gif" >
           <input accept="image/*" type="file" onchange="angular.element(this).scope().image_url=this.files[0];angular.element(this).scope().previewFile(this)" style="display: none;" ><br>
           </label>
           <div>
           <img ng-if="book.image_url" src={{book.image_url}} style="width: 180px;height: 280px" alt="Image preview..."></div>
 
-          <div class="form-group">
-          <label class="label">OR Paste Image's URL</label>
+
+
+          <div class="form-group" >
+          <label class="label" style=" font-size: small; color:#000000;"> OR Paste Image's URL</label>
           <input type="text" class="form-control" ng-model="imagetext" ng-change="previewFile()" placeholder="URL">
           </div>
           
           
         </div>
-        <!-- <div class="form-group">
-          <label>Buy URL</label>
-          <input type="text" class="form-control" ng-model="book.buy_url" placeholder="Buy URL">
-        </div> -->
-
+        <div class="form-group">
+          <label>Price</label>
+          <input type="text" class="form-control" ng-model="book.price" placeholder="Price">
+        </div>
        <div ng-if="book.title" style="text-align: center;"><button type="submit" class="btn btn-primary btn-lg">Add Book</button></div>
-        
-      </form>
+       <!-- <div style="text-align: center;"><button type="submit" class="btn btn-primary btn-lg">Add Book</button></div> -->
+        <br>
+        </form>
+      </div>
+      
 
-    </div>
     <div class="col-md-3"></div>
     </div>
-  </div>
 </div>
+<br>
+

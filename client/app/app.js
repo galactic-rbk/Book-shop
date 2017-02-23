@@ -4,6 +4,7 @@ angular.module('books',
   'book.main',
   'book.services',
   'addbook',
+  'addorder',
   'ngRoute'
 	])
 .config(function($routeProvider, $httpProvider){
@@ -43,6 +44,12 @@ angular.module('books',
   .when('/links',{
     templateUrl:'app/account/showlinks.html',
     controller:'BookController'
+
   })
-    .otherwise({redirectTo:'/'});
+  .when('/orders',{
+    templateUrl:'app/account/showorders.html',
+    controller:'OrderController'
+
+  })
+    .otherwise({redirectTo:'/'})
 })
