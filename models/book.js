@@ -28,8 +28,7 @@ const bookSchema = mongoose.Schema({
 		type: String
 	},
 	price:{
-		type: String,
-		required: true
+		type: String
 	},
 	user_id:{
 		type: String
@@ -43,6 +42,9 @@ const bookSchema = mongoose.Schema({
 	},
 	approved:{
 		type:String
+	},
+	rating:{
+		type:Object
 	}
 });
 

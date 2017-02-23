@@ -23,7 +23,6 @@ angular.module('addbook' , [])
         console.log(error);
       });
   }
-
   $scope.updatebook = function (bk) {
     console.log(bk)
     book.updatebook(bk)
@@ -39,6 +38,7 @@ angular.module('addbook' , [])
     $scope.book = data;
   });
   }
+
 
   /// turn image into buffer
   $scope.click=false
@@ -60,6 +60,23 @@ angular.module('addbook' , [])
     }
     $scope.loading=false;
   }
+
+  $scope.updatebook = function (bk) {
+    console.log(bk)
+    book.updatebook(bk)
+    .then(function (Book) {
+        console.log(Book)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+   $scope.showBook = function () {
+    book.showbook($scope.book).then(function(data) {
+    $scope.book = data;
+  });
+  }
+
 
   //upload book
  
@@ -89,9 +106,50 @@ angular.module('addbook' , [])
   // if($location.path() === "/upload"){
   //   alert('hey')
   // }
+
+$scope.checked=function(num){
+  console.log(num)
+  return false
+}
+
 $scope.booktab=function(link){
   window.open(link,"_blank")
 }
+
+//console.log($scope.book)
+$scope.rate=function(num,bk){
+  bk.rating===undefined ? bk.rating={} : null;
+  //console.log(bk)
+  bk.rating[localStorage.getItem('user.book')]=num;
+  $scope.updatebook(bk);
+  $scope.result=0;
+  for(var i=0;i< Object.keys(bk.rating).length;i++){  
+    $scope.result+=bk.rating[Object.keys(bk.rating)[i]]
+  }
+  $scope.result=Math.floor($scope.result/Object.keys(bk.rating).length);
+  //console.log($scope.result);
+}
+
+$scope.check=function(bk){
+  $scope.result=0;
+  for(var i=0;i< Object.keys(bk.rating).length;i++){   
+    $scope.result+=bk.rating[Object.keys(bk.rating)[i]]
+  }
+  $scope.result=Math.floor($scope.result/Object.keys(bk.rating).length);
+  return $scope.result
+}
+$scope.rateCheck=function(num,bk){
+  //console.log(bk)
+  if(num===bk.rating[localStorage.getItem('user.book')]){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+});
+
+
 
 
   // function to add book to the cart
@@ -131,5 +189,6 @@ $scope.booktab=function(link){
       $scope.sum+=price
     }
   }
+
 
 });

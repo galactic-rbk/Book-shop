@@ -1,4 +1,5 @@
 
+
   <div class="panel-heading" style="text-align: center;">
     <h3 class="panel-title" ng-controller="BookController"  style=" font-size: medium; color:#000000;font-weight: bolder;">Upload Book</h3>
   </div>
@@ -25,6 +26,9 @@
           </select>
         </div>
         <div class="form-group">
+
+   
+
           <label class="label"  style=" font-size: medium; color:#000000;">Author</label>
           <input type="text" class="form-control" ng-model="book.author" placeholder="Author">
         </div>
@@ -38,6 +42,7 @@
         </div>
         <div class="form-group">
           <label class="label"  style=" font-size: medium; color:#000000;">Description</label>
+
           <textarea class="form-control" ng-model="book.description" placeholder="Description"></textarea>
         </div>
         <!-- <div class="form-group">
@@ -49,6 +54,9 @@
           <textarea class="form-control" ng-model="upload.description" placeholder="Description"></textarea>
         </div> -->
         <div class="form-group">
+
+          
+
           <label class="btn btn-primary btn-md">Add File
           <img ng-if="loading" style="height: 30px; width: 30px;" src="load.gif" >
           <input accept="application/pdf" id="test" type="file" onchange="angular.element(this).scope().file=this.files[0];angular.element(this).scope().prosFile(this)" style="display: none;" ><br>
@@ -76,3 +84,4 @@
     <div class="col-md-3"></div>
     </div>
   </div>
+
