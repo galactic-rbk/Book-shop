@@ -1,12 +1,13 @@
-<!-- this html page for add book just from the admin -->
+
 <div class="panel panel-default">
   <div class="panel-heading" style="text-align: center;">
-    <h3 class="panel-title" ng-controller="BookController">Add Book</h3>
+    <h3 class="panel-title" ng-controller="BookController">Upload Book</h3>
   </div>
   <div class="panel-body">
-    <div class="row" style="background:url(http://torange.biz/photo/43/43241/B43241.jpg)center;">
+    <div class="row" style="background:url(http://www.motionbackgroundsforfree.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-2.43.55-PM.png)center;">
     <div class="col-md-3"></div>
       <div class="col-md-6" style="background:url() no-repeat center;color: darkblue; font-size: medium;">
+      
       <form ng-submit="addbook()">
         <div class="form-group">
           <label class="label">Title</label>
@@ -38,17 +39,24 @@
           <label class="label">Description</label>
           <textarea class="form-control" ng-model="book.description" placeholder="Description"></textarea>
         </div>
+        <!-- <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" ng-model="upload.title" placeholder="Title">
+        </div>
         <div class="form-group">
-          <label class="btn btn-default btn-file">Add Image
+          <label>Description</label>
+          <textarea class="form-control" ng-model="upload.description" placeholder="Description"></textarea>
+        </div> -->
+        <div class="form-group">
+          <label class="btn btn-default btn-file">Add File
           <img ng-if="loading" style="height: 30px; width: 30px;" src="load.gif" >
-          <input accept="image/*" type="file" onchange="angular.element(this).scope().image_url=this.files[0];angular.element(this).scope().previewFile(this)" style="display: none;" ><br>
+          <input accept="application/pdf" id="test" type="file" onchange="angular.element(this).scope().file=this.files[0];angular.element(this).scope().prosFile(this)" style="display: none;" ><br>
           </label>
-          <div>
-          <img ng-if="book.image_url" src={{book.image_url}} style="width: 180px;height: 280px" alt="Image preview..."></div>
+          
 
           <div class="form-group">
-          <label class="label">OR Paste Image's URL</label>
-          <input type="text" class="form-control" ng-model="imagetext" ng-change="previewFile()" placeholder="URL">
+          <label class="label">OR Paste File's URL</label>
+          <input type="text" class="form-control" ng-model="filetext" ng-change="prosFile()" placeholder="URL">
           </div>
           
           
@@ -58,7 +66,7 @@
           <input type="text" class="form-control" ng-model="book.buy_url" placeholder="Buy URL">
         </div> -->
 
-       <div ng-if="book.title" style="text-align: center;"><button type="submit" class="btn btn-primary btn-lg">Add Book</button></div>
+       <div ng-if="filetext!==''||(book.link && file)" style="text-align: center;"><button type="submit" class="btn btn-primary btn-lg">Upload and Send File to Admin</button></div>
         
       </form>
 

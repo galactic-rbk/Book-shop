@@ -36,5 +36,13 @@ angular.module('books',
     templateUrl:'app/account/aboutus.html',
     controller:'BookController'
   })
+  .when('/upload',{
+    templateUrl:'app/account/upload.html',
+    controller:'BookController'
+  })
+  .when('/links',{
+    templateUrl:'app/account/showlinks.html',
+    controller:'BookController'
+  })
     .otherwise({redirectTo:'/'});
 })
