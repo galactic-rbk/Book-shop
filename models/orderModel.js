@@ -7,13 +7,10 @@ const oredrSchema = mongoose.Schema({
 	},
 	title:{
 		type: String,
-		required: true,
-		// unique: true
+		required: true
 	},
 	price:{
-		type: String,
-		required: true,
-		// unique: true
+		type: String
 	},
 	image_url:{
 		type: String
