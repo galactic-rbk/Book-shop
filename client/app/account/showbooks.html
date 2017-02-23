@@ -7,9 +7,9 @@
         <div class="col-md-6" ng-if="books.approved==='true'">
          <div class="col-md-6">
         <img class="thumbnail" ng-if="!books.link" src="{{books.image_url}}" style="width: 180px;height: 280px">
-        <img style="height: 100px;width: 100px" ng-if="books.type==='link' && !books.click" ng-click='books.click=!books.click' src="https://lh3.googleusercontent.com/yRj8UIvEGQRuZt5CCwc-SSgYFinQP4WsLbquzXwLVEP5ub_6h0-EnKnW2_nBw8LlmSwW=w170">
+        <img style="height: 280px;width: 180px" ng-if="books.type==='link' && !books.click" ng-click='books.click=!books.click' src="https://lh3.googleusercontent.com/yRj8UIvEGQRuZt5CCwc-SSgYFinQP4WsLbquzXwLVEP5ub_6h0-EnKnW2_nBw8LlmSwW=w170">
         <object ng-if="books.type==='link' && books.click" style="height: 280px;width: 180px" type="application/pdf" data={{books.link}} ></object>
-        <div><button class="btn btn-primary" ng-if="books.type==='link'" ng-click='booktab(books.link)'>Download</button></div>
+        
         </div>
       <form>
   <fieldset>
@@ -63,6 +63,7 @@
          
           <button class="btn btn-primary btn-md" ng-click="Buy(books.title,books.price,books.image_url)">Buy</button>
           <button class="btn btn-primary btn-md" ng-click="cancel(books.title)">Cancel</button>
+          <div><button class="btn btn-primary" ng-if="books.type==='link'" ng-click='booktab(books.link)'>Download</button></div>
           <br>
           <br>
             </div>
@@ -84,6 +85,7 @@
   <span class="popuptext" id="myPopup">{{sum + " JD "}}</span>
   <button class="btn btn-primary btn-md" ng-click='add(buy)'> Submit Order</button>
 </div>
+<br>
 <br>
 <br>
 <br>

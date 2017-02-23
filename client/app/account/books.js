@@ -147,11 +147,6 @@ $scope.rateCheck=function(num,bk){
     return false;
   }
 }
-});
-
-
-
-
   // function to add book to the cart
   $scope.Buy=function(title,price,image_url){
      if($window.localStorage.getItem("user.book")){
