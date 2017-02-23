@@ -47,7 +47,6 @@ angular.module('books',
     controller:'BookController'
     })
 
-})
   .when('/orders',{
     templateUrl:'app/account/showorders.html',
     controller:'OrderController'
@@ -55,3 +54,4 @@ angular.module('books',
   })
     .otherwise({redirectTo:'/'})
 })
+    
